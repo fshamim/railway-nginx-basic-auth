@@ -40,6 +40,7 @@ for ((i = 0; i < ${#server_name_array[@]}; i++)); do
           proxy_set_header X-Nginx-Proxy true;
           proxy_http_version 1.1;
           proxy_pass ${proxy_pass_array[$i]};
+          resolver 8.8.8.8 ipv6=off;
           proxy_set_header X-Forwarded-User \$remote_user;
       }
   }"
